@@ -13,6 +13,72 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+const questions = [
+    {
+        type: 'list',
+        message: 'What is the role of the employee?',
+        choices: ['manager', 'engineer', 'intern'],
+        name: 'role',
+    },
+    {
+        type: 'input',
+        message: 'What is the name of the employee?',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'What is the ID of the employee?',
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: 'What is the email of the employee?',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'What is the office number of the manager?',
+        name: 'office',
+        when: (answer) => answer.role === 'manager',
+    },
+    {
+        type: 'input',
+        message: 'What is the GitHub username for the engineer?',
+        name: 'github',
+        when: (answer) => answer.role === 'engineer',
+    },
+    {
+        type: 'input',
+        message: 'What is the school of the intern?',
+        name: 'school',
+        when: (answer) => answer.role === 'intern',
+    },
+    {
+        type: 'list',
+        message: 'Would you like to add another employee?',
+        choices: ['Yes', 'No'],
+        name: 'add',
+    },
+]
+
+function askQuestions() {
+    inquirer.prompt(questions).then(res => {
+
+        if (res.role === 'manager') {
+            const manager = new Manager(res.name, res.id, res.email, res.office);
+        } else if (res.role === 'engineer') {
+            const engineer = new Engineer(res.name, res.id, res.email, res.github);
+        } else {
+            const intern = new Intern(res.name, res.id, res.email, res.school);
+        }
+
+        if (res.add === "Yes") {
+            askQuestions();
+        }
+    })
+}
+
+askQuestions();
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
