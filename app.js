@@ -10,6 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const team = [];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -66,10 +67,13 @@ function askQuestions() {
 
         if (res.role === 'manager') {
             const manager = new Manager(res.name, res.id, res.email, res.office);
+            team.push(manager);
         } else if (res.role === 'engineer') {
             const engineer = new Engineer(res.name, res.id, res.email, res.github);
+            team.push(engineer);
         } else {
             const intern = new Intern(res.name, res.id, res.email, res.school);
+            team.push(intern);
         }
 
         if (res.add === "Yes") {
