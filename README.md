@@ -1,48 +1,43 @@
-# employee-summary
+# Employee Summary
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This application is a test-driven application. The Employee, Engineer, Intern, and Manager JS files in the lib folder were developed to pass the tests in their corresponding test JS files in the test folder. Each of the JS files in the lib folder has a class to build a type of employee. The parent class is the Employee class in the Employee.js file in the lib folder. The Engineer, Intern, and Manager classes in their corresponding JS files extend from the parent Employee class. 
+A command line application built to allow the creation of a team including different types of employees.
 
-The app.js file is the main application which initially prompts the user to provide information about employees. Depending on the type of employee selected, the application uses the correct class to build that type of employee. The employees are saved to an array. Once the user adds the last employee the application passes the array to the htmlRender.js file and starts building the HTML page using the templates in the templates folder. After the HTML file is built, the application saves it to the output folder.
+## What the project does
 
-Here is a screenshot of the final output after entering employee information:
+The project allows the creation of teams to include different types of employees. It captures different information based on the type of employee and it generates an HTML file with formatted information. Below is a GIF showing the application in action.
 
-![employee-summary](./images/sample.png)
+![employee-summary](./images/employee-summary.gif)
 
-## Table of Contents
+## Why is the project useful
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+The project makes it easy for anyone to create a new team for a new project. It allows the user to select different types of employees and it generates an HTML file that's user friendly.
 
-## Installation
+## How can users get started with this project
 
-The application uses the inquirer and jest npm packages. To install them run npm install on the terminal you're using to interact with the application.
+Because it's a command line application, the repo has to be cloned, the npm packages installed, and the application initiated via the terminal.
 
-## Usage
+## What technologies were used with this project
 
-To use the application simply run it using node by typing node app.js on the terminal you're using to interact with the application.
+* JavaScript
+* HTML
+* Jest
+* Inquirer
+* Path
+* FS
+* Bootstrap
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Contributing
-
-Contributions are currently not accepted for this project.
-
-## Tests
-
-The test npm package used in this application is jest. To run a test simply type npm run test on the terminal you're using.
-
-## Questions
+## Where can users get help with your project
 
 My GitHub username is: chavalk
 
 Link: https://github.com/chavalk
 
 If you have additional questions, feel free to reach me at chavalk@hotmail.com.
+
+## Who maintains and contributes to the project
+
+Currently I'm the only person maintaining and contributing to the project.
